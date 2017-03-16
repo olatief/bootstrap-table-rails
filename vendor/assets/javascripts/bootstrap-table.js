@@ -4,7 +4,13 @@
  * https://github.com/wenzhixin/bootstrap-table/
  */
 
-(function ($) {
+(function() {
+  initPage();
+});
+(window).bind('page:change', function() {
+  initPage();
+});
+(function initPage ($) {
     'use strict';
 
     // TOOLS DEFINITION
