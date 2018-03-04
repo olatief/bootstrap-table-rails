@@ -4,13 +4,7 @@
  * https://github.com/wenzhixin/bootstrap-table/
  */
 
-(function() {
-  initPage();
-});
-(window).bind('page:change', function() {
-  initPage();
-});
-(function initPage ($) {
+(function ($) {
     'use strict';
 
     // TOOLS DEFINITION
@@ -1271,7 +1265,9 @@
                         value = item;
                         var props = key.split('.');
                         for (var prop_index = 0; prop_index < props.length; prop_index++) {
-                            value = value[props[prop_index]];
+                            if (value[props[prop_index]] != null) { 
+                                value = value[props[prop_index]];
+                            }
                         }
 
                         // Fix #142: respect searchForamtter boolean
